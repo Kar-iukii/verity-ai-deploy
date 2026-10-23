@@ -1,0 +1,19 @@
+flask
+flask-cors
+opencv-python-headless>=4.8,<5
+easyocr
+insightface
+onnxruntime
+# Pinned: ml/models/*.pkl were pickled with 1.9 â€” retrain with ml/train_model.py after upgrading
+scikit-learn==1.9.0
+joblib
+numpy
+pillow
+python-dotenv
+torch
+torchvision
+timm
+easydict
+tqdm
+
+gunicorn>=23,<24
