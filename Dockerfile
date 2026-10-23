@@ -8,6 +8,9 @@ COPY requirements.txt .
 RUN python -m pip install --upgrade pip setuptools wheel && \
     python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu && \
     python -m pip install -r requirements.txt
+RUN python -m pip uninstall -y opencv-python opencv-contrib-python opencv-python-headless opencv-contrib-python-headless && \
+    python -m pip install --no-cache-dir --no-deps "opencv-python-headless>=4.8,<5" && \
+    python -c "import cv2; print('OpenCV import OK:', cv2.__version__)"
 RUN useradd --create-home --uid 10001 app
 COPY --chown=app:app app.py wsgi.py validate_models.py /app/
 COPY --chown=app:app routes/ /app/routes/
