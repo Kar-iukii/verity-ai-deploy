@@ -1,0 +1,2 @@
+ml/models/*.model binary
+ml/models/scaler.json text eol=lf

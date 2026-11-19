@@ -5,3 +5,5 @@
 .env.*
 *.zip
 README.md
+
+ml/models/*.pkl
