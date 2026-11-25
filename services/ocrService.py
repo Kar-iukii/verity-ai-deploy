@@ -1078,7 +1078,7 @@ def match_identity_fields(canonical, registered, name_threshold=NAME_MATCH_THRES
     ]
 
     overall = name_match and id_match and dob_match
-    confidence = float((coverage + (1.0 if id_match else 0.0) + (1.0 if dob_match else 0.0)) / 3.0)
+    confidence = 0.50 * id_match + 0.25 * coverage + 0.25 * dob_match
 
     return {
         'field_matches': field_matches,
